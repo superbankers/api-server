@@ -19,7 +19,6 @@ passport.use('local-login', new LocalStrategy({
     passReqToCallback: true,
     sessions: true
 }, async (req, email, password, done) => {
-    console.log(email)
     const user = await User.findOne({email: email});
     if(!user) {
         return done(null, false, {'message': 'User Not found'})

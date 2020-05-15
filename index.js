@@ -3,20 +3,25 @@ import cors from 'cors';
 import express from 'express';
 import apiRoutes from './routes/api/main'
 import mongoose from 'mongoose'
+import bodyParser from 'body-parser'
 import passport from 'passport'
 import './config/passport'
-import flash from 'connect-flash'
-import session from 'express-session';
+import session from 'express-session'
+
+mongoose.Promise = require('bluebird')
 
 const app = express();
-app.use(session({ cookie: { maxAge: 60000 }, 
-  secret: 'woot',
-  resave: false, 
-  saveUninitialized: false}));
-app.use(flash());
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+app.use(session({ cookie: { maxAge: 60000 }, 
+  secret: 'razer',
+  resave: false, 
+  saveUninitialized: false}));
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 mongoose.connect(process.env.MongoAtlasConnectionString, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;

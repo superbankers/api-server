@@ -4,11 +4,8 @@ const passport = require('passport')
 const User = require('../models/user')
 const bcrypt = require('bcrypt-nodejs')
 
-// GET
-// =====================================
 export const login = (req, res) => {
   passport.authenticate('local-login', (err, user, info) => {
-		console.log(user)
 		if (err) {
 			return res.status(500).json({message: 'Internal Server Error'})
 		}
@@ -19,8 +16,7 @@ export const login = (req, res) => {
 			if (err) {
 				res.send(err)
 			}
-			
-			return res.status(200).json({user})
+			return res.status(200).end(JSON.stringify(user))
 		})
 	})(req, res)
 }
