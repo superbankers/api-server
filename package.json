@@ -1,0 +1,37 @@
+{
+  "name": "express-mongo-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "./node_modules/.bin/nodemon --exec babel-node ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/john-97/express-mongo-boilerplate.git"
+  },
+  "keywords": [],
+  "author": " <Your Name> (example.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/john-97/express-mongo-boilerplate/issues"
+  },
+  "homepage": "https://github.com/john-97/express-mongo-boilerplate#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "country-telephone-code": "^0.2.0",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "iso-country-codes": "0.0.5",
+    "mongoose": "^5.6.0",
+    "sha256": "^0.2.0",
+    "yup": "^0.27.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "nodemon": "^1.19.1"
+  }
+}
