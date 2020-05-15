@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-mongoose.connect(process.env.MongoAtlasConnectionString, { useNewUrlParser: true });
+mongoose.connect(process.env.MongoAtlasConnectionString, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'Connection error: '));
 db.once('open', () => console.log('Successfully connected to MongoDB.'));
