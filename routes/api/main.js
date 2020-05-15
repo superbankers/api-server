@@ -1,12 +1,8 @@
 import { Router } from 'express'
-import { createNewUser, login } from '../../controllers/authentication'
-import { createNewListing, getListingsByType } from '../../controllers/shop'
+import { signup, login } from '../../controllers/auth'
 const router = Router();
 
-router.get('/authentication/login/:id/:password', login)
-router.post('/authentication/new-user', createNewUser)
-
-router.get('/shop/listings/:type/:id/:password', getListingsByType)
-router.post('/shop/new-listing/:id/:password', createNewListing)
+router.post('/auth/signup/', signup)
+router.post('/auth/login/', login)
 
 export default router;

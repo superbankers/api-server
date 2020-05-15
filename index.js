@@ -3,8 +3,17 @@ import cors from 'cors';
 import express from 'express';
 import apiRoutes from './routes/api/main'
 import mongoose from 'mongoose'
+import passport from 'passport'
+import './config/passport'
+import flash from 'connect-flash'
+import session from 'express-session';
 
 const app = express();
+app.use(session({ cookie: { maxAge: 60000 }, 
+  secret: 'woot',
+  resave: false, 
+  saveUninitialized: false}));
+app.use(flash());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
