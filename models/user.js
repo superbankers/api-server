@@ -4,10 +4,9 @@ const passportLocalMongoose = require('passport-local-mongoose')
 const {Schema} = mongoose;
 
 const userSchema = new Schema ({
-    email: String,
+    username: String,
     password: String,
     profile: {
-        salary: Number,
         bank_balance: Number,
         loans: Array,
         stocks: Array
@@ -16,7 +15,6 @@ const userSchema = new Schema ({
 
 userSchema.methods.restartGame = () => {
     const profile = `{
-        "salary": 2000, 
         "bank_balance": 2000, 
         "loans": [], 
         "stocks": []

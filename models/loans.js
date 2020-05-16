@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const loanSchema = new Schema({
-	loanName: String,
+	name: String,
 	pic: String,
 	bank: String,
 	risk_assessment: Number,

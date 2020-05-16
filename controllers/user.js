@@ -1,7 +1,3 @@
-import {getStocks} from '../controllers/stocks'
-import {getLoans} from '../controllers/loan'
-import {getEvents} from '../controllers/events'
-
 const Users = require('../models/user')
 const Stocks = require('../models/stocks')
 const Loans = require('../models/loans')
@@ -54,6 +50,24 @@ export const restartGame = (req, res) => {
 			if (user) {
 				user.profile = user.restartGame()
 				user.save()
+				return res.status(200).json(user)
+			}
+			else {
+				err = new Error('User: ' + req.params.id + ' Not Found')
+				return res.status(400).end(err)
+			}
+		})
+	}
+	catch (err) {
+		return res.status(500).end()
+	}
+}
+
+export const getUserById = (req, res) => {
+	try {
+		Users.findById(mongoose.Types.ObjectId(req.params.id))
+		.then((user) => {
+			if (user) {
 				return res.status(200).json(user)
 			}
 			else {

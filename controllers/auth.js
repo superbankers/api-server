@@ -1,8 +1,6 @@
 const express = require('express')
-const router  = express.Router()
 const passport = require('passport')
 const User = require('../models/user')
-const bcrypt = require('bcrypt-nodejs')
 
 export const login = (req, res) => {
   passport.authenticate('local-login', (err, user, info) => {
@@ -14,22 +12,25 @@ export const login = (req, res) => {
 		}
 		req.login(user, {session: false}, (err) => {
 			if (err) {
-				res.send(err)
+				// res.send(err)
+				console.log('Error')
 			}
-			return res.status(200).end(JSON.stringify(user))
+			else {
+				return res.status(200).end(JSON.stringify(user))
+			}
 		})
 	})(req, res)
 }
 
 export const signup = async (req, res) => {
-	const {email, password} = req.body
+	const {username, password} = req.body
 
-	const user = await User.findOne({email: email});
+	const user = await User.findOne({username: username});
 	if(user) {
-			return res.status(400).json({'message': 'Email already exists'})
+			return res.status(400).json({'message': 'Username already exists'})
 	} else {
 			const newUser = new User();
-			newUser.email = email;
+			newUser.username = username;
 			newUser.password = newUser.encryptPassword(password);
 			try {
 				newUser.save();

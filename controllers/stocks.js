@@ -31,3 +31,22 @@ export const getStocksById = (req, res) => {
 	}
 }
 
+export const buyStock = (req, res) => {
+	try {
+		const {username, stock_name, shares, valuation} = req.body
+		
+		Stocks.findById(mongoose.Types.ObjectId(req.params.id))
+		.then((stocks) => {
+			if (stocks) {
+				return res.status(200).json(stocks)
+			}
+			else {
+				err = new Error('Stock: ' + req.params.id + ' Not Found')
+				return res.status(400).end(err)
+			}
+		})
+	}
+	catch (err) {
+		return res.status(500).end()
+	}
+}

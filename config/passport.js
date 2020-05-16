@@ -14,23 +14,24 @@ passport.deserializeUser(async (id, done) => {
 });
 
 passport.use('local-login', new LocalStrategy({
-    usernameField: 'email',
+    usernameField: 'username',
     passwordField: 'password',
     passReqToCallback: true,
     sessions: true
-}, async (req, email, password, done) => {
-    const user = await User.findOne({email: email});
+}, async (req, username, password, done) => {
+    const user = await User.findOne({username: username});
     if(!user) {
         return done(null, false, {'message': 'User Not found'})
-		}
-		// Match password
-		bcrypt.compare(password, user.password, (err, isMatch) => {
-			if (err) throw err;
-			if (isMatch) {
-				return done(null, user);
-			} else {
-				return done(null, false, { message: 'Incorrect Password' });
-			}
-		});
-    done(null, user);
+    }
+    // Match password
+    bcrypt.compare(password, user.password, (err, isMatch) => {
+        if (err) {
+            done(null, false, {'message': 'Internal Server Error'});
+        }
+        if (isMatch) {
+            return done(null, user);
+        } else {
+            return done(null, false, {'message': 'Incorrect Password'});
+        }
+    });
 }));

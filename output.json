@@ -1,0 +1,197 @@
+{
+	"profile": {
+			"loans": [],
+			"stocks": [],
+			"salary": 2000,
+			"bank_balance": 2000
+	},
+	"stocks": [
+			{
+					"valuation": [
+							18300,
+							18200,
+							18100,
+							18250,
+							18150,
+							18320,
+							18300,
+							18270,
+							18350,
+							18200
+					],
+					"_id": "5ebeaa0e0a7f43a334557217",
+					"stock_name": "Microsoft",
+					"pic": "https://cdn2.vectorstock.com/i/1000x1000/12/36/company-building-gradient-round-icon-vector-8301236.jpg",
+					"risk_assessment": 1,
+					"industry": "Technology",
+					"total_shares": 5000000,
+					"description": "Large technology company that sells hardware and software."
+			},
+			{
+					"valuation": [
+							2000,
+							3000,
+							1500,
+							8000,
+							3500,
+							4000,
+							5500,
+							2200,
+							3400,
+							5000
+					],
+					"_id": "5ebeac940a7f43a334557218",
+					"stock_name": "SIA",
+					"pic": "stock.png",
+					"risk_assessment": 4,
+					"industry": "Aviation",
+					"total_shares": 300000,
+					"description": "Airline service company based in Singapore."
+			},
+			{
+					"valuation": [
+							14000,
+							18200,
+							18100,
+							18250,
+							18150,
+							18320,
+							18300,
+							18270,
+							18350,
+							18200
+					],
+					"_id": "5ebf6326879983ca0ad0be2e",
+					"stock_name": "Apple",
+					"pic": "https://cdn2.vectorstock.com/i/1000x1000/12/36/company-building-gradient-round-icon-vector-8301236.jpg",
+					"risk_assessment": 2,
+					"industry": "Technology",
+					"total_shares": 5000000,
+					"description": "Large technology company that sells hardware and software."
+			}
+	],
+	"loans": [
+			{
+					"interest_rates": [
+							1.3,
+							2,
+							4,
+							5,
+							7,
+							8,
+							9,
+							10,
+							11,
+							11.5
+					],
+					"_id": "5ebea12e0a7f43a33455720d",
+					"loanName": "loan A",
+					"pic": "image.png",
+					"bank": "razer bank",
+					"risk_assessment": 1,
+					"description": "This is a low risk loan for aspiring investors."
+			},
+			{
+					"interest_rates": [
+							4,
+							5,
+							7,
+							8,
+							9,
+							10,
+							11,
+							11.5,
+							12,
+							13
+					],
+					"_id": "5ebea3cc0a7f43a334557211",
+					"loanName": "loan B",
+					"pic": "image.png",
+					"bank": "razer bank",
+					"risk_assessment": 5,
+					"description": "This is a low risk loan for aspiring investors."
+			},
+			{
+					"interest_rates": [
+							4,
+							8,
+							9,
+							10,
+							11,
+							11.5,
+							12,
+							13,
+							14,
+							15
+					],
+					"_id": "5ebea6900a7f43a334557212",
+					"loanName": "loan C",
+					"pic": "image.png",
+					"bank": "razer bank",
+					"risk_assessment": 10,
+					"description": "This is a low risk loan for aspiring investors."
+			}
+	],
+	"events": [
+			{
+					"_id": "5ebea83eeca8efe16bd8da0c",
+					"event_name": "The Great Depression",
+					"pic": "https://png.pngtree.com/png-clipart/20200225/original/pngtree-terrible-explosion-icon-isolated-png-image_5260704.jpg",
+					"description": "Cities around the world were hit hard, especially those dependent on heavy industry. Construction was virtually halted in many countries. Farming communities and rural areas suffered as crop prices fell by about 60%.[7][8][9] Facing plummeting demand with few alternative sources of jobs, areas dependent on primary sector industries such as mining and logging suffered the most."
+			},
+			{
+					"_id": "5ebea8450a7f43a334557215",
+					"event_name": "Covid 19",
+					"pic": "https://png.pngtree.com/png-clipart/20200225/original/pngtree-terrible-explosion-icon-isolated-png-image_5260704.jpg",
+					"description": "Due to the Novel corona virus, many industries were greatly affected especially the tourism and aviation industry."
+			},
+			{
+					"_id": "5ebea8fb0a7f43a334557216",
+					"event_name": "Dotcom Bubble",
+					"pic": "https://png.pngtree.com/png-clipart/20200225/original/pngtree-terrible-explosion-icon-isolated-png-image_5260704.jpg",
+					"description": "Right at the market’s peak, several of the leading high-tech companies, such as Dell and Cisco placed huge sell orders on their stocks, sparking panic selling among investors. Within a few weeks, the stock market lost 10% of its value. As investment capital began to dry up, so did the lifeblood of cash-strapped dotcom companies. Dotcom companies that had reached market capitalization in the hundreds of millions of dollars became worthless within a matter of months. By the end of 2001, a majority of publicly traded dotcom companies folded, and trillions of dollars of investment capital evaporated."
+			},
+			{
+					"_id": "5ebeb1fe0a7f43a334557219",
+					"event_name": "911 Terrorist Attack",
+					"pic": "https://png.pngtree.com/png-clipart/20200225/original/pngtree-terrible-explosion-icon-isolated-png-image_5260704.jpg",
+					"description": "This caused some of the major stock exchange market to be shut down for a period of time. This has resulted in drastic economic losses and huge loss in insurances and properties."
+			},
+			{
+					"_id": "5ebeb4ba0a7f43a33455721a",
+					"event_name": "US-China Trade War",
+					"pic": "https://png.pngtree.com/png-clipart/20200225/original/pngtree-terrible-explosion-icon-isolated-png-image_5260704.jpg",
+					"description": "This affected companies who outsource to other countries and companies who are reliant on exports and imports such as tech companies."
+			},
+			{
+					"_id": "5ebeb57d0a7f43a33455721b",
+					"event_name": "Large Increase in Free Trade Agreements",
+					"pic": "https://png.pngtree.com/png-clipart/20200225/original/pngtree-terrible-explosion-icon-isolated-png-image_5260704.jpg",
+					"description": "This has improved the exports and imports industries, and the positive impact has spilled over to many other industries such as technology."
+			},
+			{
+					"_id": "5ebeb8010a7f43a33455721c",
+					"event_name": "Interest Rate Cuts",
+					"pic": "https://png.pngtree.com/png-clipart/20200225/original/pngtree-terrible-explosion-icon-isolated-png-image_5260704.jpg",
+					"description": "Asset heavy businesses experiences a drastic improvement int cash flow, allowing numerous industries to improve significantly especially real estate."
+			},
+			{
+					"_id": "5ebf4f26879983ca0ad0be2b",
+					"event_name": "Inflation",
+					"pic": "https://png.pngtree.com/png-clipart/20200225/original/pngtree-terrible-explosion-icon-isolated-png-image_5260704.jpg",
+					"description": "Authorities have implemented a mass increase in price for several commodities, allowing industries such as Food and beverages to be hit hard first."
+			},
+			{
+					"_id": "5ebf4f91879983ca0ad0be2c",
+					"event_name": "ObamaCare",
+					"pic": "https://png.pngtree.com/png-clipart/20200225/original/pngtree-terrible-explosion-icon-isolated-png-image_5260704.jpg",
+					"description": "The Affordable Care Act expanded health coverage to 20 million people. They could receive low-cost preventive care for chronic illnesses. That kept them out of expensive emergency rooms.  As a result, the rise in U.S. health care costs has slowed. Between 2010 and 2016, health care costs rose by 4.3% a year.19\ufeff That's slower than the 6% annual increase during the prior 20 years."
+			},
+			{
+					"_id": "5ebf4fc1879983ca0ad0be2d",
+					"event_name": "Stimulus Package Released by USA",
+					"pic": "https://png.pngtree.com/png-clipart/20200225/original/pngtree-terrible-explosion-icon-isolated-png-image_5260704.jpg",
+					"description": "Billions of dollars to the tourism industry and other affected industries by the crisis"
+			}
+	]
+}
