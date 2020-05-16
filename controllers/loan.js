@@ -7,41 +7,45 @@ const loanAccount = require('../loanAccount.json')
 export const applyLoan = (req, res) => {
 	const {start, end, name, username, amount} = req.body
 	try {
-		if (!req.body) {
-			throw err
+		if (username) {
+			Users.findOne({username: username})
+			.then((user) => {
+				user.bank_balance += amount
+
+				let user_loans  = {loans: user.profile.loans}
+				
+				user_loans['loans'].push({
+					name: name,
+					amount: amount,
+					start: start,
+					end: end
+				})
+				user.profile.loans = user_loans['loans']
+				user.save()
+			})
+			.then(() => {
+				loanAccount['loanAccount'].loanName = name
+				loanAccount['loanAccount'].loanAmount = amount
+
+				axios.post('https://razerhackathon.sandbox.mambu.com/api/loans', loanAccount, {
+					auth: {
+						username: 'Team98',
+						password: 'pass16F08D3D40'
+					}
+				})
+				.then((response) => {
+					if (response.data) {
+						return res.status(200).send(true)
+					}
+				})
+			})
+			.catch((err) => {
+				return res.status(500).end()
+			})
 		}
-		
-		Users.findOne({username: username})
-		.then((user) => {
-			user.bank_balance += amount
-
-			let user_loans  = {loans: user.profile.loans}
-			
-			user_loans['loans'].push({
-				name: name,
-				amount: amount,
-				start: start,
-				end: end
-			})
-			user.profile.loans = user_loans['loans']
-			user.save()
-		})
-		.then(() => {
-			loanAccount['loanAccount'].loanName = name
-			loanAccount['loanAccount'].loanAmount = amount
-
-			axios.post('https://razerhackathon.sandbox.mambu.com/api/loans', loanAccount, {
-				auth: {
-					username: 'Team98',
-					password: 'pass16F08D3D40'
-				}
-			})
-			.then((response) => {
-				if (response.data) {
-					return res.status(200).send(true)
-				}
-			})
-		})
+		else {
+			return res.status(500).send(false)
+		}
 	}
 	catch (err) {
 		return res.status(500).end()

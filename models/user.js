@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt-nodejs');
 const passportLocalMongoose = require('passport-local-mongoose')
 const {Schema} = mongoose;
+const moment = require('moment')
 
 const userSchema = new Schema ({
     username: String,
@@ -41,10 +42,12 @@ const userSchema = new Schema ({
 });
 
 userSchema.methods.restartGame = () => {
+    const start_time = moment().format('YYYY-MM-DD h:mm:ss')
     const profile = `{
         "bank_balance": 2000, 
         "loans": [], 
-        "stocks": []
+        "stocks": [],
+        "start_time": ${start_time}
     }`
     return JSON.parse(profile)
 }
