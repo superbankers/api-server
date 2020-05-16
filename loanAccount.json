@@ -1,0 +1,25 @@
+{
+	"loanAccount": {
+			"accountHolderType": "CLIENT",
+			"accountHolderKey": "8a8e86697217553701721d76377b2dd2",
+			"productTypeKey": "8a8e867271bd280c0171bf768cc31a89",
+			"assignedBranchKey": "8a8e878e71c7a4d70171ca6bba981313",
+			"loanName": "Student Loan",
+			"loanAmount": 1010,
+			"interestRate": "2",
+			"arrearsTolerancePeriod": "0",
+			"gracePeriod": "0",
+			"repaymentInstallments": "10",
+			"repaymentPeriodCount": "1",
+			"periodicPayment": "0",
+			"repaymentPeriodUnit": "WEEKS",
+			"disbursementDetails": {
+					"customInformation": [
+							{
+									"value": "unique identifier for this transaction",
+									"customFieldID": "IDENTIFIER_TRANSACTION_CHANNEL_I"
+							}
+					]
+			}
+	}
+}
