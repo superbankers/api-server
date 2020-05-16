@@ -21,7 +21,7 @@ export const getEventsById = (req, res) => {
 				return res.status(200).json(events)
 			}
 			else {
-				err = new Error('Loan: ' + req.params.id + ' Not Found')
+				err = new Error('Event: ' + req.params.id + ' Not Found')
 				return res.status(400).end(err)
 			}
 		})

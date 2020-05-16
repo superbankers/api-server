@@ -3,10 +3,14 @@ import { signup, login } from '../../controllers/auth'
 import { getLoans, getLoansById } from '../../controllers/loan'
 import { getStocks, getStocksById } from '../../controllers/stocks'
 import { getEvents, getEventsById } from '../../controllers/events'
+import { loadGame, restartGame } from '../../controllers/user'
 const router = Router();
 
-router.post('/auth/signup/', signup)
-router.post('/auth/login/', login)
+router.post('/signup/', signup)
+router.post('/login/', login)
+
+router.get('/loadGame/:id', loadGame)
+router.put('/restartGame/:id', restartGame)
 
 router.get('/loans/all', getLoans)
 router.get('/loans/:id', getLoansById)

@@ -21,7 +21,7 @@ export const getStocksById = (req, res) => {
 				return res.status(200).json(stocks)
 			}
 			else {
-				err = new Error('Loan: ' + req.params.id + ' Not Found')
+				err = new Error('Stock: ' + req.params.id + ' Not Found')
 				return res.status(400).end(err)
 			}
 		})
