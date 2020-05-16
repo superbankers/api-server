@@ -13,7 +13,8 @@ export const loadGame = (req, res) => {
 			events: null
 		}
 
-		Users.findById(mongoose.Types.ObjectId(req.params.id))
+		const {username} = req.body
+		Users.findOne({username: username})
 		.then(async (user) => {
 			if (user) {
 				object.profile = user.profile
@@ -33,7 +34,7 @@ export const loadGame = (req, res) => {
 				return res.status(200).json(object)
 			}
 			else {
-				err = new Error('User: ' + req.params.id + ' Not Found')
+				err = new Error('User: ' + username + ' Not Found')
 				return res.status(400).end(err)
 			}
 		})
@@ -45,7 +46,8 @@ export const loadGame = (req, res) => {
 
 export const restartGame = (req, res) => {
 	try {
-		Users.findById(mongoose.Types.ObjectId(req.params.id))
+		const {username} = req.body
+		Users.findOne({username: username})
 		.then((user) => {
 			if (user) {
 				user.profile = user.restartGame()
@@ -53,7 +55,7 @@ export const restartGame = (req, res) => {
 				return res.status(200).json(user)
 			}
 			else {
-				err = new Error('User: ' + req.params.id + ' Not Found')
+				err = new Error('User: ' + username + ' Not Found')
 				return res.status(400).end(err)
 			}
 		})
