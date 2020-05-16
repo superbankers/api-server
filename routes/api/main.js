@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import { signup, login } from '../../controllers/auth'
-import { getLoans, getLoansById } from '../../controllers/loan'
+import { getLoans, getLoansById, applyLoan } from '../../controllers/loan'
 import { getStocks, getStocksById, buyStock, sellStock } from '../../controllers/stocks'
 import { loadGame, restartGame, getUserById } from '../../controllers/user'
 import { getEvents, getEventsById } from '../../controllers/events'
@@ -15,6 +15,7 @@ router.put('/restartGame/', restartGame)
 router.post('/stocks/buy/', buyStock)
 router.post('/stocks/sell/', sellStock)
 
+router.get('/loans/applyLoan', applyLoan)
 
 // router.get('/user/:id', getUserById)
 

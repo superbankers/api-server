@@ -21,7 +21,21 @@ const userSchema = new Schema ({
                 shares: Number
             }
         ]
-    }
+    },
+    firstName: String,
+    lastName: String,
+    preferredLanguage: String,
+    notes: String,
+    branchKey: String,
+    idDocuments: [
+        {
+            identificationDocumentTemplateKey: String,
+            issuingAuthority: String,
+            documentType: String,
+            validUntil: String,
+            documentId: String
+        }
+    ]
 });
 
 userSchema.methods.restartGame = () => {
