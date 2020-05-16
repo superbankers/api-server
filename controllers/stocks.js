@@ -92,6 +92,9 @@ export const sellStock = async (req, res) => {
 				for (stock in user_stocks['stocks']) {
 					if (name === user_stocks['stocks'][stock].name) {
 						user_stocks['stocks'][stock].shares -= shares
+						if (user_stocks['stocks'][stock].shares <= 0) {
+							user_stocks['stocks'].pop(user_stocks['stocks'][stock])
+						}
 						own_stock = true
 						break
 					}

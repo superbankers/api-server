@@ -25,7 +25,6 @@ export const applyLoan = (req, res) => {
 			})
 			user.profile.loans = user_loans['loans']
 			user.save()
-			return res.status(200)
 		})
 		.then(() => {
 			loanAccount['loanAccount'].loanName = name

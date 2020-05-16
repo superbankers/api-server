@@ -21,7 +21,8 @@ const userSchema = new Schema ({
                 name: String,
                 shares: Number
             }
-        ]
+        ],
+        start_time: String
     },
     firstName: String,
     lastName: String,
