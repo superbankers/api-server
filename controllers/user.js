@@ -7,6 +7,7 @@ const mongoose = require('mongoose')
 export const loadGame = (req, res) => {
 	try {
 		const object = {
+			user: null,
 			profile: null,
 			stocks: null,
 			loans: null,
@@ -17,6 +18,7 @@ export const loadGame = (req, res) => {
 		Users.findOne({username: username})
 		.then(async (user) => {
 			if (user) {
+				object.user = user
 				object.profile = user.profile
 				await Stocks.find().then((stocks) => {
 					object.stocks = stocks
