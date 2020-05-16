@@ -9,13 +9,13 @@ const router = Router();
 router.post('/signup/', signup)
 router.post('/login/', login)
 
-router.get('/loadGame/', loadGame)
+router.post('/loadGame/', loadGame)
 router.put('/restartGame/', restartGame)
 
 router.post('/stocks/buy/', buyStock)
 router.post('/stocks/sell/', sellStock)
 
-router.get('/loans/applyLoan', applyLoan)
+router.post('/loans/applyLoan', applyLoan)
 
 // router.get('/user/:id', getUserById)
 

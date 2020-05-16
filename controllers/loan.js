@@ -5,11 +5,14 @@ const request = require('request')
 
 export const applyLoan = (req, res) => {
 	const {start, end, name, username, amount} = req.body
-	
 	try {
+		if (!req.body) {
+			throw err
+		}
+		
 		Users.findOne({username: username})
 		.then((user) => {
-			let user_loans  = user.profile.loans
+			let user_loans  = {loans: user.profile.loans}
 			let has_loan = false
 
 			for (loan in user_loans['loans']) {
@@ -27,8 +30,9 @@ export const applyLoan = (req, res) => {
 					end: end
 				})
 			}
+			console.log(user_loans)
 			user.profile.loans = user_loans
-			user.save()
+			// user.save()
 			return res.status(200).json(user.profile.loans)
 		})
 	}

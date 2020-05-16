@@ -36,7 +36,7 @@ export const loadGame = (req, res) => {
 				return res.status(200).json(object)
 			}
 			else {
-				err = new Error('User: ' + username + ' Not Found')
+				let err = new Error('User: ' + username + ' Not Found')
 				return res.status(400).end(err)
 			}
 		})
