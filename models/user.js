@@ -8,8 +8,19 @@ const userSchema = new Schema ({
     password: String,
     profile: {
         bank_balance: Number,
-        loans: Array,
-        stocks: Array
+        loans: [
+            {
+                name: String,
+                start_year: Number,
+                end_year: Number
+            }
+        ],
+        stocks: [
+            {
+                name: String,
+                shares: Number
+            }
+        ]
     }
 });
 

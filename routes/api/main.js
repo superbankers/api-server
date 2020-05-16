@@ -19,7 +19,7 @@ router.get('/loans/:id', getLoansById)
 
 router.get('/stocks/all', getStocks)
 router.get('/stocks/:id', getStocksById)
-router.post('/stocks/buy/:id', buyStock)
+router.post('/stocks/buy/', buyStock)
 
 router.get('/events/all', getEvents)
 router.get('/events/:id', getEventsById)
