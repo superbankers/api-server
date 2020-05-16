@@ -11,8 +11,9 @@ const userSchema = new Schema ({
         loans: [
             {
                 name: String,
-                start_year: Number,
-                end_year: Number
+                amount: Number,
+                start: Number,
+                end: Number
             }
         ],
         stocks: [
