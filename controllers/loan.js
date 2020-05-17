@@ -6,6 +6,7 @@ const loanAccount = require('../loanAccount.json')
 
 export const applyLoan = (req, res) => {
 	const {start, end, name, username, amount} = req.body
+	console.log(req.body)
 	try {
 		if (username) {
 			Users.findOne({username: username})
@@ -22,11 +23,11 @@ export const applyLoan = (req, res) => {
 				})
 				user.profile.loans = user_loans['loans']
 				user.save()
+				return res.status(200).send(true)
 			})
 			.then(() => {
 				loanAccount['loanAccount'].loanName = name
 				loanAccount['loanAccount'].loanAmount = amount
-
 				axios.post('https://razerhackathon.sandbox.mambu.com/api/loans', loanAccount, {
 					auth: {
 						username: 'Team98',
@@ -37,6 +38,10 @@ export const applyLoan = (req, res) => {
 					if (response.data) {
 						return res.status(200).send(true)
 					}
+				})
+				.catch((err) => {
+					console.log(err)
+					return res.status(402).end()
 				})
 			})
 			.catch((err) => {
