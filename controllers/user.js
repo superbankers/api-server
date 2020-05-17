@@ -32,7 +32,6 @@ export const loadGame = (req, res) => {
 					object.events = events
 				})
 
-				console.log(object)
 				return res.status(200).json(object)
 			}
 			else {

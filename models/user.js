@@ -47,7 +47,7 @@ userSchema.methods.restartGame = () => {
         "bank_balance": 2000, 
         "loans": [], 
         "stocks": [],
-        "start_time": ${start_time}
+        "start_time": "${start_time}"
     }`
     return JSON.parse(profile)
 }
